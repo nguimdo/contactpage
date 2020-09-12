@@ -37,7 +37,7 @@ pipeline {
 }
         stage ( 'deployment trigger'){
             steps {
-                build 'hol-pipeline-CD'
+               sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible_hosts', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'ansible-playbook /etc/ansible/deployment', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)]) 
             }
         }
     
