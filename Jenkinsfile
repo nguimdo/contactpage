@@ -26,10 +26,10 @@ pipeline {
         script {
           checkout scm
           docker.withRegistry('', 'DockerID') {
-          def customImage = docker.build("francinenguimdo/contactpage-pipeline:${env.BUILD_ID}")
-          def customImage1 = docker.build("francinenguimdo/contactpage-pipeline")
-          customImage.push()
-          customImage1.push()
+          def dockerImage = docker.build("francinenguimdo/contactpage-pipeline:${env.BUILD_ID}")
+          def dockerImage1 = docker.build("francinenguimdo/contactpage-pipeline")
+          dockerImage.push()
+          dockerImage1.push()
           }
     }
 
