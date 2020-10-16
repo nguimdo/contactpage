@@ -12,8 +12,8 @@
 
   <artifactId>contactpage</artifactId>
   <packaging>war</packaging>
-  <name>Webapp</name>
-  <description>Webapp.</description>
+  <name>contactpage</name>
+  <description>contactpage.</description>
 
   <build>
     <finalName>${project.artifactId}</finalName>
